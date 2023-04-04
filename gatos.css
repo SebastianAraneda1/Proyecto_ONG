@@ -1,0 +1,40 @@
+body {
+  background-color: #30423b;
+}
+
+.titulo {
+  text-align: center;
+  color: rgb(186, 216, 125);
+  font-size: 5vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gatitos {
+  background-color: rgb(124, 114, 88);
+  border-radius: 20px;
+  width: 100vh;
+  margin: auto;
+}
+
+p {
+  text-align: justify;
+  margin-left: 20vh;
+  margin-right: 20vh;
+  color: rgb(230, 230, 204);
+  font-size: 3vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+  color: rgb(250, 255, 174);
+  font-size: 3vh;
+}
+
+#gato {
+  width: 40vh;
+  margin: 20px 10px 10px 4vh;
+  border-radius: 20px;
+  border: 10px;
+  border-color: grey;
+  border-style: groove;
+}
