@@ -28,6 +28,7 @@ body {
 a {
   color: rgb(250, 255, 174) !important;
   font-size: 3vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #perro {
