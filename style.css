@@ -21,6 +21,7 @@ p, ul {
 a {
   color: rgb(250, 255, 174) !important;
   font-size: 3vh;
+  text-align: center !important;
 }
 
 .imagenes {
