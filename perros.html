@@ -4,27 +4,48 @@
   <head>
     <link rel="stylesheet" href="perros.css">
     <title>Ayuda a un peludo</title>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   </head>
 
   <body>
     <h1 class="titulo"><b>Perros en adopción</b></h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nam cumque magnam est animi rem cupiditate tempora explicabo distinctio facilis officia exercitationem hic aliquid sit corrupti, illum amet in, possimus optio quibusdam. Minima nemo repellendus rerum vero adipisci consequatur est dolor hic quaerat culpa, quas odio voluptas enim accusamus ullam quidem ea veniam ipsa commodi beatae corporis. Quidem porro accusantium ipsam saepe vel fuga vero odio beatae itaque aliquid officia, voluptatum error reprehenderit esse voluptatem voluptatibus qui corrupti dolorem fugiat, ab quas tempora. Aliquam laudantium voluptatum laboriosam id natus! Tempora, quibusdam repudiandae? Minus excepturi sed voluptatibus eligendi a, cumque alias?</p>
+    <p class="parrafo">Adopta a nuestros perritos disponibles aqui abajo, cada uno te mostrara sus datos si pinchas su nombre. Si deseas adoptarlo solo debes dar click en "Adoptar"</p>
 
     <h2 class="titulo">Nuestros perros que buscan familia:</h2>
 
     <div class="perritos">
-
-      <img id="perro" src="imagenes/perrito1.jpg" alt="Perrito Cachulo">
-      <a href="#openModalUno">Cachulo</a>
-
-      <img id="perro" src="imagenes/perrito2.jpg" alt="Perrita Niña">
-      <a href="#openModalDos">Niña</a>
-
-      <img id="perro" src="imagenes/perrito3.jpg" alt="Perrita Flaca">
-      <a href="#openModalTres">Flaca</a>
-
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <img id="perro" src="imagenes/perrito1.jpg" alt="Perrito Cachulo">
+          </div>
+          <div class="col 6">
+            <a href="#openModalUno">Cachulo</a>
+            <br>
+            <br>
+            <a href="#" rel="noopener noreferrer"><b>Adoptame</b></a>
+          </div>
+          <div class="col-6">
+            <img id="perro" src="imagenes/perrito2.jpg" alt="Perrita Niña">
+          </div>
+          <div class="col-6">
+            <a href="#openModalDos">Niña</a>
+            <br>
+            <br>
+            <a href="#" rel="noopener noreferrer"><b>Adoptame</b></a>
+          </div>
+          <div class="col-6">
+            <img id="perro" src="imagenes/perrito3.jpg" alt="Perrita Flaca">
+          </div>
+          <div class="col-6">
+            <a href="#openModalTres">Flaca</a>
+            <br>
+            <br>
+            <a href="#" rel="noopener noreferrer"><b>Adoptame</b></a>
+          </div>
+        </div>
+      </div>
     </div>
     <!--Modal-->
     <div id="openModalUno" class="modalDialog">
@@ -41,20 +62,20 @@
      <div>
        <a href="#close" title="Close" class="close">X</a>
        <h2>NIÑA</h2>
-       <p>Edad: 4 años</p>
-       <p>Genero: Hembra</p>
-       <p>Esterilizado: Si</p>
-       <p>N° Chip: 2222222</p>
+       <p id="texto">Edad: 4 años</p>
+       <p id="texto">Genero: Hembra</p>
+       <p id="texto">Esterilizado: Si</p>
+       <p id="texto">N° Chip: 2222222</p>
      </div>
    </div>
    <div id="openModalTres" class="modalDialog">
      <div>
        <a href="#close" title="Close" class="close">X</a>
        <h2>FLACA</h2>
-       <p>Edad: 2 Meses</p>
-       <p>Genero: Hembra</p>
-       <p>Esterilizado: Si</p>
-       <p>N° Chip: 333333</p>
+       <p id="texto">Edad: 2 Meses</p>
+       <p id="texto">Genero: Hembra</p>
+       <p id="texto">Esterilizado: Si</p>
+       <p id="texto">N° Chip: 333333</p>
      </div>
    </div>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

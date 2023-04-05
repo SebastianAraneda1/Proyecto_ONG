@@ -16,12 +16,12 @@ body {
   margin: auto;
 }
 
-p {
+.parrafo {
   text-align: justify;
-  margin-left: 20vh;
-  margin-right: 20vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
   color: rgb(230, 230, 204);
-  font-size: 3vh;
+  font-size: 3vw;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -94,3 +94,7 @@ transition: opacity 400ms ease-in;
 	box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #00d9ff; }
+
+#texto {
+	color: #000;
+}

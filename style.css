@@ -1,7 +1,7 @@
 .titulo {
   text-align: center;
   color: rgb(186, 216, 125);
-  font-size: 5vh;
+  font-size: 4vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -11,28 +11,27 @@ body {
 
 p, ul {
   text-align: justify;
-  margin-left: 20vh;
-  margin-right: 20vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
   color: rgb(230, 230, 204);
-  font-size: 3vh;
+  font-size: 3vw;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 a {
   color: rgb(250, 255, 174) !important;
-  font-size: 3vh;
-  text-align: center !important;
+  font-size: 3vw;
 }
 
 .imagenes {
   background-color: rgb(124, 114, 88);
   border-radius: 20px;
-  width: 100vh;
+  width: 80vw;
   margin: auto;
 }
 
 #gato, #perro {
-  width: 40vh;
+  width: 30vw;
   margin: 20px 10px 10px 4vh;
   border-radius: 20px;
   border: 10px;
