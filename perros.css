@@ -5,14 +5,14 @@ body {
 .titulo {
   text-align: center;
   color: rgb(186, 216, 125);
-  font-size: 5vh;
+  font-size: 4vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .perritos {
   background-color: rgb(124, 114, 88);
   border-radius: 20px;
-  width: 100vh;
+  width: 55vw;
   margin: auto;
 }
 
@@ -27,15 +27,15 @@ body {
 
 a {
   color: rgb(250, 255, 174) !important;
-  font-size: 3vh;
+  font-size: 2vw;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #perro {
-  width: 40vh;
-  margin: 20px 10px 10px 4vh;
+  width: 20vw;
+  margin: 3vw 3vw 2vw 2vw;
   border-radius: 20px;
-  border: 10px;
+  border: 1vw;
   border-color: grey;
   border-style: groove;
 }
