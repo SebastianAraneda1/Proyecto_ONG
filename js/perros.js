@@ -1,3 +1,4 @@
 function adoptado(){
-  alert("Has adoptado a este cachorro")
+  var adop = "<label>Adoptado</label>"
+  document.getElementById("adopcion").innerHTML = adop
 }
