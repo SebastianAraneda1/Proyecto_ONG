@@ -31,7 +31,7 @@ a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#perro {
+.perro {
   width: 20vw;
   margin: 3vw 3vw 2vw 2vw;
   border-radius: 20px;
