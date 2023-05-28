@@ -1,0 +1,24 @@
+CONTEXTO:
+
+El problema de la empresa (que es una ONG) es su escasa notoriedad y el limitado espacio de
+almacenamiento que posee para guardar las mascotas que esperan ser adoptadas, estos dos
+problemas juntos, causan que la empresa se vea limitada para recoger más animales que
+necesitan adopción y tengan poca clientela.
+
+La solución propuesta es realizar una página web que facilita la atención al cliente y la adopción de
+mascotas, además de que las personas también podrán comprar accesorios adicionales para sus
+mascotas recién adoptadas, esto hará que la notoriedad de la empresa suba aún más, lo cual
+generará que la adopción de animales aumente y eso va a liberar mucho más espacio para poder
+recoger más animales.
+
+El motivo por el cual se llevará a cabo este proyecto es por un compromiso en la ayuda de los
+animales y la empresa ONG, que se dedica a un bienestar animal, siendo una muy buena
+contribución al ambiente o entorno ya que se ven muchos animales callejeros por la ciudad sin un
+dueño y ningún cuidado.
+
+REQUERIMIENTOS FUNCIONALES: 
+
+RF001- Registrar cuenta de usuario
+RF002- Consulta de adopciones
+RF003- Compra de insumos
+RF004- Rellenar formularios de adopción
