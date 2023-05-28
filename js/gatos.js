@@ -1,23 +1,23 @@
-function validar(){
-    
+    function validar(){
+
     var formularioCorrecto = true
 
     var nombre = $("#nombre").val()
     var largoNombre = nombre.length
     if(largoNombre < 4 || largoNombre > 20){
-            formularioCorrecto = false
-            $("#nombreError").show()
+        formularioCorrecto = false
+        $("#nombreError").show()
     }else{
-            $("#nombreError").hide()
+        $("#nombreError").hide()
     }
 
     var paterno = $("#aPaterno").val()
     var largoPaterno = paterno.length
     if(largoPaterno < 4 || largoPaterno > 20){
-            formularioCorrecto = false
-            $("#apError").show()
+        formularioCorrecto = false
+        $("#apError").show()
     }else{
-            $("#apError").hide()
+        $("#apError").hide()
     }
 
     var materno = $("#aMaterno").val()
@@ -51,18 +51,18 @@ function validar(){
         adoptar();
     }
 
-}
+    }
 
-function adoptar(){
-        const id = sessionStorage.getItem("perro");
+    function adoptar(){
+        const id = sessionStorage.getItem("gato");
         const element = document.getElementById(id);
         element.style.display = "none";
-        alert("Adoptaste a un cachorro");
+        alert("Adoptaste a un minino");
     // console.log(5 == '5');
     // console.log(5 === '5');
-}
+    }
 
-function almacenar(id){
+    function almacenar(id){
         console.log(id);
-        sessionStorage.setItem("perro", id)
-}
+        sessionStorage.setItem("gato", id)
+    }
