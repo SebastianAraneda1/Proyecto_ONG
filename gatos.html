@@ -46,7 +46,8 @@
 
     <div class="gatitos">
       <div class="container-lg">
-        <div class="row align-items-center">
+        <!--GINGER-->
+        <div id="ginger" class="row align-items-center">
           <div class="col-6">
             <img id="gato" src="imagenes/minino1.jpg" alt="Gatito Ginger">
           </div>
@@ -54,8 +55,11 @@
             <a href="#openModalUno" rel="noopener noreferrer">Ginger</a>
             <br>
             <br>
-            <a href="sinGato1.html" rel="noopener noreferrer"><b>Adoptame</b></a>
+            <a id="adoptar1" href="#modalFormUno" onclick="almacenar('ginger')" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
           </div>
+        </div>
+        <!--TOMMY-->
+        <div id="tommy" class="row align-items-center">
           <div class="col-6">
             <img id="gato" src="imagenes/minino2.jpg" alt="Gatito Tommy">
           </div>
@@ -63,8 +67,11 @@
             <a href="#openModalDoS">Tommy </a>
             <br>
             <br>
-            <a href="#" rel="noopener noreferrer"><b>Adoptame</b></a>
+            <a id="adoptar1" href="#modalFormUno" onclick="almacenar('tommy')" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
           </div>
+        </div>
+        <!--LUCIFER-->
+        <div id="lucifer" class="row align-items-center">
           <div class="col-6">
             <img id="gato" src="imagenes/minino3.jpg" alt="Gatito Lucifer">
           </div>
@@ -72,7 +79,7 @@
             <a href="#openModalTres">Lucifer </a>
             <br>
             <br>
-            <a href="#" rel="noopener noreferrer"><b>Adoptame</b></a>
+            <a id="adoptar1" href="#modalFormUno" onclick="almacenar('lucifer')" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
           </div>
         </div>
       </div>
@@ -109,8 +116,80 @@
         <p id="texto">N° Chip: 333333</p>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
+    <!--MODAL FORMULARIO-->
+    <div id="modalFormUno" class="modalDialog">
+      <div>
+        <a href="#close" id="x" title="Close" class="close">X</a>
+        <h2>Adoptar mascota</h2>
+        <form id="form">
+          <div class="formulario">
+
+            <div class="nombre">
+              <label for="nombre">Nombre:</label>
+              <input class="cajas" type="text" id="nombre" name="nombre">
+              <span class="msgError" id="nombreError">Nombre Invalido</span>
+            </div>
+            <br>
+            <div class="apellidos">
+              <label for="apellidoPaterno">Apellido Paterno:</label>
+              <input class="cajas" type="text" id="aPaterno" name="ApellidoPaterno">
+              <span class="msgError" id="apError">Apellido paterno invalido</span>
+              <label for="apellidoMaterno">Apellido Materno:</label>
+              <input class="cajas" type="text" id="aMaterno" name="apellidoMaterno">
+              <span class="msgError" id="amError">Apellido materno invalido</span>
+            </div>
+            <br>
+            <div class="rut">
+              <label for="rut">Rut:</label>
+              <input class="cajas" type="text" id="rut" name="rut" placeholder="Rut (sin puntos ni guión)">
+              <span class="msgError" id="rutError">Rut invalido</span>
+            </div>
+            <br>
+            <div class="correo">
+              <label for="email">Correo:</label>
+              <input class="cajas" type="email" id="correo" name="email" placeholder="Email">
+              <span class="msgError" id="emailError">Correo invalido</span>
+            </div>
+            <br>
+            <div class="genero">
+              <label for="genero">Genero:</label>
+              <select name="genero" id="genero">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Ninguno">Ninguno</option>
+              </select>
+            </div>
+            <br>
+            <input id="btnAdoptar" class="boton" type="submit" value="Adoptar">
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/gatos.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".msgError").hide()
+        $("#btnAdoptar").click(validar)
+      })
+      $("#form").on("submit", function(event) {
+        event.preventDefault();
+        var formularioCorrecto = validar();
+        if (!formularioCorrecto) {
+          event.preventDefault(); // Evitar que el formulario se envíe si la validación falla
+        }else{
+          adoptar();
+          document.getElementById("x").click();
+        }
+      });
+    </script>
   </body>
 
   </html>

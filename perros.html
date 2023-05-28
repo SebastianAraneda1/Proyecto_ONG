@@ -46,70 +46,161 @@
 
     <div class="perritos">
       <div class="container-lg">
-        <div class="row align-items-center">
+
+        <!--CACHULO-->
+        <div id="cachulo" class="row row align-items-center">
           <div class="col-6">
             <img class="perro" id="perro1" src="imagenes/perrito1.jpg" alt="Perrito Cachulo">
           </div>
-          <div class="col 6">
+          <div class="col-6">
             <a href="#openModalUno">Cachulo</a>
             <br>
             <br>
-            <a id="adoptar1" href="#" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
-          </div>
-          <div class="col-6">
-            <img class="perro" id="perro2" src="imagenes/perrito2.jpg" alt="Perrita Niña">
-          </div>
-          <div class="col-6">
-            <a href="#openModalDos">Niña</a>
-            <br>
-            <br>
-            <a id="adoptar2" href="#" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
-          </div>
-          <div class="col-6">
-            <img class="perro" id="perro3" src="imagenes/perrito3.jpg" alt="Perrita Flaca">
-          </div>
-          <div class="col-6">
-            <a href="#openModalTres">Flaca</a>
-            <br>
-            <br>
-            <a id="adoptar3" href="#" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
+            <a id="adoptar1" href="#modalFormUno" onclick="almacenar('cachulo')" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
           </div>
         </div>
+        
+        <!--NIÑA-->
+        <div id="nina" class="row row align-items-center">
+          <div class="col-6">
+            <div class="niña">
+              <img class="perro" id="perro2" src="imagenes/perrito2.jpg" alt="Perrita Niña">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="niña">
+              <a href="#openModalDoS">Niña</a>
+              <br>
+              <br>
+              <a id="adoptar2" href="#modalFormUno" onclick="almacenar('nina')" rel="noopener noreferrer" onclick="adoptar()">Adoptame</a>
+            </div>
+          </div>
+        </div>
+
+        <!--FLACA-->
+        <div id="flaca" class="row row align-items-center">
+          <div class="col-6">
+            <div class="flaca">
+              <img class="perro" id="perro3" src="imagenes/perrito3.jpg" alt="Perrita Flaca">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="flaca">
+              <a href="#openModalTres">Flaca</a>
+              <br>
+              <br>
+              <a id="adoptar3" href="#modalFormUno" onclick="almacenar('flaca')" rel="noopener noreferrer" >Adoptame</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
     <!--Modal-->
     <div id="openModalUno" class="modalDialog">
-     <div>
+      <div>
        <a href="#close" title="Close" class="close">X</a>
        <h2>CACHULO</h2>
        <p>Edad: 2 años</p>
        <p>Genero: Macho</p>
        <p>Esterilizado: Si</p>
        <p>N° Chip: 11111111</p>
-     </div>
-   </div>
-   <div id="openModalDoS" class="modalDialog">
-     <div>
+      </div>
+    </div>
+    <div id="openModalDoS" class="modalDialog">
+      <div>
        <a href="#close" title="Close" class="close">X</a>
        <h2>NIÑA</h2>
        <p id="texto">Edad: 4 años</p>
        <p id="texto">Genero: Hembra</p>
        <p id="texto">Esterilizado: Si</p>
        <p id="texto">N° Chip: 2222222</p>
-     </div>
-   </div>
-   <div id="openModalTres" class="modalDialog">
-     <div>
+      </div>
+    </div>
+    <div id="openModalTres" class="modalDialog">
+      <div>
        <a href="#close" title="Close" class="close">X</a>
        <h2>FLACA</h2>
        <p id="texto">Edad: 2 Meses</p>
        <p id="texto">Genero: Hembra</p>
        <p id="texto">Esterilizado: Si</p>
        <p id="texto">N° Chip: 333333</p>
-     </div>
+      </div>
     </div>
+
+    <!--MODAL FORMULARIO-->
+    <div id="modalFormUno" class="modalDialog">
+      <div>
+        <a href="#close" id="x" title="Close" class="close">X</a>
+        <h2>Adoptar mascota</h2>
+        <form id="form">
+          <div class="formulario">
+
+            <div class="nombre">
+              <label for="nombre">Nombre:</label>
+              <input class="cajas" type="text" id="nombre" name="nombre">
+              <span class="msgError" id="nombreError">Nombre Invalido</span>
+            </div>
+            <br>
+            <div class="apellidos">
+              <label for="apellidoPaterno">Apellido Paterno:</label>
+              <input class="cajas" type="text" id="aPaterno" name="ApellidoPaterno">
+              <span class="msgError" id="apError">Apellido paterno invalido</span>
+              <label for="apellidoMaterno">Apellido Materno:</label>
+              <input class="cajas" type="text" id="aMaterno" name="apellidoMaterno">
+              <span class="msgError" id="amError">Apellido materno invalido</span>
+            </div>
+            <br>
+            <div class="rut">
+              <label for="rut">Rut:</label>
+              <input class="cajas" type="text" id="rut" name="rut" placeholder="Rut (sin puntos ni guión)">
+              <span class="msgError" id="rutError">Rut invalido</span>
+            </div>
+            <br>
+            <div class="correo">
+              <label for="email">Correo:</label>
+              <input class="cajas" type="email" id="correo" name="email" placeholder="Email">
+              <span class="msgError" id="emailError">Correo invalido</span>
+            </div>
+            <br>
+            <div class="genero">
+              <label for="genero">Genero:</label>
+              <select name="genero" id="genero">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Ninguno">Ninguno</option>
+              </select>
+            </div>
+            <br>
+            <input id="btnAdoptar" class="boton" type="submit" value="Adoptar">
+          </div>
+        </form>
+      </div>
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
+    crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="js/perros.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".msgError").hide()
+        $("#btnAdoptar").click(validar)
+      })
+      $("#form").on("submit", function(event) {
+        event.preventDefault();
+        var formularioCorrecto = validar();
+        if (!formularioCorrecto) {
+          event.preventDefault(); // Evitar que el formulario se envíe si la validación falla
+        }else{
+          adoptar();
+          document.getElementById("x").click();
+        }
+      });
+    </script>
   </body>
 
 </html>

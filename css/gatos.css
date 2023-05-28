@@ -97,3 +97,49 @@ transition: opacity 400ms ease-in;
 #texto {
 	color: #000 !important;
 }
+
+.cajas:hover, .cajas:focus{
+	border-left: 10px solid #1a4c7e;
+}
+
+.boton{
+	width: 100%;
+	padding: 15px;
+	border-radius: 2px;
+	border: none;
+	margin: 20px 0;
+	font-size: 15px;
+	background: rgb(250, 255, 174);
+	color: #1b262c;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.boton:hover{
+	background: #133043;
+}
+
+/*#form {
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	color: #1b262c;
+	margin: 0;
+}*/
+
+/*.formulario {
+	width: 35vh;
+	padding: 10vh;
+	margin: auto;
+	margin-top: 10vh;
+	background: #557569;
+	border-radius: 5vh;
+	border-style: groove;
+}*/
+
+label {
+	color: rgb(0, 0, 0);
+}
+
+.msgError {
+	color: red;
+}
