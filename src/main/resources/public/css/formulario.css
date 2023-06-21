@@ -1,22 +1,24 @@
 /*--ACOMODANDO-MARGENES-PADDING--*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open sans';
 }
+
 /*--IMAGEN-DE-FONDO--------------*/
-body{
+body {
     font-family: 'Overpass', sans-serif;
     font-weight: normal;
     font-size: 100%;
     color: #1b262c;
-    
+
     margin: 0;
     background-color: #5f6769;
 }
+
 /*--FORMULARIO-------------------*/
-.form{
+.form {
     width: 450px;
     padding: 30px;
     margin: auto;
@@ -24,13 +26,15 @@ body{
     background: #30423b;
     border-radius: 5px;
 }
+
 /*--TITULO-----------------------*/
-.titulo{
+.titulo {
     color: rgb(250, 255, 174);
     margin-bottom: 20px;
 }
+
 /*--CAJAS-DE-DATOS---------------*/
-.cajas{
+.cajas {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
@@ -39,24 +43,29 @@ body{
     border-left: 10px solid #d9e4ea;
     transition: all .5s ease;
 }
-.cajas:hover, .cajas:focus{
+
+.cajas:hover, .cajas:focus {
     border-left: 10px solid #1a4c7e;
 }
+
 /*--TERMINOS-Y-CONDICIONES-------*/
-.termino1{
+.termino1 {
     text-align: center;
     color: rgb(250, 255, 174);
 }
-.termino2{
+
+.termino2 {
     color: rgb(250, 255, 174);
     text-decoration: none;
     font-weight: bold;
 }
-.termino2:hover{
+
+.termino2:hover {
     color: #dbdbdb;
 }
+
 /*--BOTON-DE-REGISTRARSE---------*/
-.btn{
+.btn {
     width: 100%;
     padding: 15px;
     border-radius: 2px;
@@ -68,16 +77,19 @@ body{
     cursor: pointer;
     transition: all .5s ease;
 }
-.btn:hover{
+
+.btn:hover {
     background: #133043;
 }
+
 /*--YA-TENGO-CUENTA--------------*/
-.tengo-cuenta{
+.tengo-cuenta {
     text-align: center;
     color: rgb(250, 255, 174);
     font-weight: bold;
     text-decoration: none;
 }
-.tengo-cuenta:hover{
+
+.tengo-cuenta:hover {
     color: #dbdbdb;
 }

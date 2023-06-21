@@ -4,7 +4,7 @@ body {
     font-weight: normal;
     font-size: 100%;
     color: #1b262c;
-    
+
     margin: 0;
     background-color: #5f6769;
 }
@@ -14,15 +14,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     margin: 0;
     padding: 0;
     min-width: 100vw;
     min-height: 100vh;
     width: 100%;
     height: 100%;
-    
-    background-image: url(../imagenes/fondo_difuminado_login.jpg);
+
+    background-image: url(src/main/resources/public/imagenes/fondo_difuminado_login.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -32,25 +32,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
-    
+    flex-direction: row;
+
     min-width: 380px;
     max-width: 900px;
     width: 90%;
-    
+
     background-color: #30423b;
-    
+
     /*opacity: 0.50;
     filter: alpha(opacity=50);*/
-    
+
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
-    
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    
+
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+
     padding: 30px;
     box-sizing: border-box;
 }
@@ -63,17 +63,17 @@ body {
     min-width: 320px;
     padding: 30px 30px 50px 30px;
     background-color: rgb(124, 114, 88);
-    
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    
+
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
-    
+
     box-sizing: border-box;
-    
+
     opacity: 1;
     filter: alpha(opacity=1);
 }
@@ -82,8 +82,8 @@ body {
     display: block;
     font-family: 'Overpass', sans-serif;
     font-size: 120%;
-    color:rgb(250, 255, 174);
-    
+    color: rgb(250, 255, 174);
+
     margin-top: 15px;
 }
 
@@ -91,16 +91,16 @@ body {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color: #1b262c;
-    
+
     display: block;
     width: 100%;
     height: 40px;
-    
+
     margin-bottom: 10px;
     padding: 5px 5px 5px 10px;
-    
+
     box-sizing: border-box;
-    
+
     border: none;
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
@@ -121,24 +121,25 @@ a:-webkit-any-link {
 #login button {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
-    color:#1b262c;
+    color: #1b262c;
     width: 100%;
     height: 40px;
     border: none;
-    
+
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
-    
+
     background-color: rgb(250, 255, 174);
-    
+
     margin-top: 10px;
 }
 
 #login button:hover {
     background-color: #3c4245;
-    color:#dfcdc3;
+    color: #dfcdc3;
 }
+
 /* formulario de login */
 /* formulario de login */
 
@@ -149,20 +150,20 @@ a:-webkit-any-link {
     /*display: flex;
     align-items:center;
     justify-content:center;*/
-    
+
     text-align: center;
     width: 100%;
-    
+
     opacity: 0.70;
     filter: alpha(opacity=70);
-    
-    padding:20px 20px 20px 50px;
+
+    padding: 20px 20px 20px 50px;
     box-sizing: border-box;
 }
 
 .titulo {
     font-size: 300%;
-    color:rgb(186, 216, 125);
+    color: rgb(186, 216, 125);
 }
 
 .logo-empresa img {
@@ -171,12 +172,13 @@ a:-webkit-any-link {
 
 hr {
     border-top: 1px solid #8c8b8b;
-	border-bottom: 1px solid #dfcdc3;
-    
+    border-bottom: 1px solid #dfcdc3;
+
 }
+
 .pie-form {
     font-size: 90%;
-    text-align: center;    
+    text-align: center;
     margin-top: 15px;
 }
 
@@ -190,15 +192,15 @@ hr {
 .pie-form a:hover {
     color: rgb(230, 230, 204);
 }
+
 /* seccion de la derecha */
 /* seccion de la derecha */
 
 /* ajustar a pantallas con ancho menor o igual a 775px; */
 /* ajustar a pantallas con ancho menor o igual a 775px; */
-@media all and (max-width: 775px)
-{
+@media all and (max-width: 775px) {
     #contenedorcentrado {
-        flex-direction:column-reverse;
+        flex-direction: column-reverse;
 
         min-width: 380px;
         max-width: 900px;
@@ -213,25 +215,26 @@ hr {
         -moz-border-radius: 10px 10px 10px 10px;
         -webkit-border-radius: 10px 10px 10px 10px;
 
-        -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-        -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-        box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+        -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
 
         padding: 30px;
         box-sizing: border-box;
     }
-    
+
     #login {
         margin: 0 auto;
     }
-    
+
     #derecho {
-        padding:20px 20px 20px 20px;
+        padding: 20px 20px 20px 20px;
     }
-    
+
     #login label {
         text-align: left;
     }
 }
+
 /* ajustar a pantallas con ancho menor o igual a 775px; */
 /* ajustar a pantallas con ancho menor o igual a 775px; */
