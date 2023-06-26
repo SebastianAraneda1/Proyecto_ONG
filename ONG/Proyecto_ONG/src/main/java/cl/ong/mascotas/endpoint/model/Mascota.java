@@ -9,6 +9,6 @@ public class Mascota {
     private int id;
     private String nombre;
     private String genero;
-    private Boolean esteril;
-    private Boolean tipo;
+    private String esteril;
+    private String tipo;
 }
