@@ -3,7 +3,7 @@ package cl.ong.mascotas.repository.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 
 @Entity
@@ -14,7 +14,7 @@ public class MascotaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(nullable = false, length = 6)
+    @Column(nullable = false, length = 10)
     private String nombre;
     @Column(nullable = false, length = 30)
     private String genero;
