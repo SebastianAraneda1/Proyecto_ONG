@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-cl">
 <head>
     <meta charset="UTF-8">
     <title>Añadir Perro</title>
@@ -9,17 +9,44 @@
         <label for="nombre">Nombre cachorro:</label>
         <input id="nombre" type="text"><br>
 
-        <label for="anios">Años:</label>
-        <input id="anios" type="number"><br>
-
         <label for="genero">Genero animal:</label>
-        <input id="genero" type=""><br>
+        <input id="genero" type="text"><br>
 
-        <label for="color">Color</label>
-        <input id="color" type="text"><br>
+        <label for="esteril">¿Esteril? (si/no):</label>
+        <input id="esteril" type="text"><br>
+
+        <label for="tipo">Tipo animal</label>
+        <input id="tipo" type="text"><br>
 
         <br>
         <a id="save" href="/">Guardar</a>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let settings = {}
+            settings.headers = {
+                "Accept":"application/json",
+                "Content-Type": "application/json"
+            }
+            $.ajaxSetup(settings)
+
+            $("#save").click(function(){
+                let formData = {}
+                formData.nombre = $("#nombre").val()
+                formData.genero = $("#genero").val()
+                formData.esteril = $("#esteril").val()
+                formData.tipo = $("#tipo").val()
+
+                let data = JSON.stringify(formData)
+
+                $.post("/mascotas", data, function(json, status, jqxhr){
+                    alert(status)
+                }, "json")
+            })
+        })
+    </script>
 </body>
 </html>
