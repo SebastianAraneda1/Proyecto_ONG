@@ -22,6 +22,31 @@
         <a id="save" href="/">Guardar</a>
     </form>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let settings = {}
+            settings.headers = {
+                "Accept":"application/json",
+                "Content-Type": "application/json"
+            }
+            $.ajaxSetup(settings)
 
+            $("#save").click(function(){
+                let formData = {}
+                formData.nombre = $("#nombre").val()
+                formData.genero = $("#genero").val()
+                formData.esteril = $("#esteril").val()
+                formData.tipo = $("#tipo").val()
+
+                let data = JSON.stringify(formData)
+
+                $.post("/mascotas", data, function(json, status, jqxhr){
+                    alert(status)
+                }, "json")
+            })
+        })
+    </script>
 </body>
 </html>
