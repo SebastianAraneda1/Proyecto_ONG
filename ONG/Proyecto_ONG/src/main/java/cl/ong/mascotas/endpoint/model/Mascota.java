@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class Mascota {
     private int id;
+    private int nroChip;
+    private int edad;
     private String nombre;
     private String genero;
     private String esteril;
