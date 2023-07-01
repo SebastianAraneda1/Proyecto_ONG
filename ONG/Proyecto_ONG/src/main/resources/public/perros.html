@@ -48,90 +48,14 @@
 <h2 class="titulo">Nuestros perros que buscan familia:</h2>
 
 <div class="perritos">
-    <div class="container-lg">
+    <div id="contenedor_perros" class="container-lg">
 
-        <!--CACHULO-->
-        <div id="cachulo" class="row row align-items-center">
-            <div class="col-6">
-                <img class="perro" id="perro1" src="imagenes/perrito1.jpg" alt="Perrito Cachulo">
-            </div>
-            <div class="col-6">
-                <a href="#openModalUno">Cachulo</a>
-                <br>
-                <br>
-                <a id="adoptar1" href="#modalFormUno" onclick="almacenar('cachulo')" rel="noopener noreferrer"
-                   onclick="adoptar()">Adoptame</a>
-            </div>
-        </div>
-
-        <!--NIÑA-->
-        <div id="nina" class="row row align-items-center">
-            <div class="col-6">
-                <div class="niña">
-                    <img class="perro" id="perro2" src="imagenes/perrito2.jpg" alt="Perrita Niña">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="niña">
-                    <a href="#openModalDoS">Niña</a>
-                    <br>
-                    <br>
-                    <a id="adoptar2" href="#modalFormUno" onclick="almacenar('nina')" rel="noopener noreferrer"
-                       onclick="adoptar()">Adoptame</a>
-                </div>
-            </div>
-        </div>
-
-        <!--FLACA-->
-        <div id="flaca" class="row row align-items-center">
-            <div class="col-6">
-                <div class="flaca">
-                    <img class="perro" id="perro3" src="imagenes/perrito3.jpg" alt="Perrita Flaca">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="flaca">
-                    <a href="#openModalTres">Flaca</a>
-                    <br>
-                    <br>
-                    <a id="adoptar3" href="#modalFormUno" onclick="almacenar('flaca')" rel="noopener noreferrer">Adoptame</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <br>
-<a id="agregarPerro" value="Agregar Cachorro" href="nuevoPerro.html">Agregar Cachorro</a>
+<button class="boton"><a style="color: #3a6d59 !important;" id="agregarPerro" value="Agregar Cachorro" href="nuevoAnimal.html">Agregar Cachorro</a></button>
 <!--Modal-->
-<div id="openModalUno" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>CACHULO</h2>
-        <p>Edad: 2 años</p>
-        <p>Genero: Macho</p>
-        <p>Esterilizado: Si</p>
-        <p>N° Chip: 11111111</p>
-    </div>
-</div>
-<div id="openModalDoS" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>NIÑA</h2>
-        <p id="texto">Edad: 4 años</p>
-        <p id="texto">Genero: Hembra</p>
-        <p id="texto">Esterilizado: Si</p>
-        <p id="texto">N° Chip: 2222222</p>
-    </div>
-</div>
-<div id="openModalTres" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>FLACA</h2>
-        <p id="texto">Edad: 2 Meses</p>
-        <p id="texto">Genero: Hembra</p>
-        <p id="texto">Esterilizado: Si</p>
-        <p id="texto">N° Chip: 333333</p>
-    </div>
+<div id="modal">
 </div>
 
 <!--MODAL FORMULARIO-->
@@ -210,37 +134,43 @@
         }
     });
 </script>
+
 <script>
     $(document).ready(function(){
-        let url = "/mascotas"
-        $.get(url, function(json){
+        $.get('/mascotas', function(json){
             $.each(json.mascotas, function(index, element){
-                let idBtnDel = "btnDel_" + element.id
-                let idRow = "row_" + element.id
-                let containers =
-                /*let row = "<tr id='" + idRow + "'>" +
-                    "<td>" + element.id + "</td>" +
-                    "<td>" + element.plateCode + "</td>" +
-                    "<td>" + element.brand + "</td>" +
-                    "<td>" + element.model + "</td>" +
-                    "<td>" + element.color + "</td>" +
-                    "<td><button id='" + idBtnDel + "'>Eliminar</button></td>" +
-                    "<td><a href='/update-car.html?id="+element.id+"'>Modificar</a></td>" +
-                    "</tr>"*/
-                $("#cars").append(row)
-                $("#" + idBtnDel).click(function(){
-                    let url = "/cars/" + element.id
-                    $.ajax({
-                        url: url,
-                        type: 'DELETE',
-                        success: function (result) {
-                            $("#" + idRow).hide()
-                        }
-                    });
-                })
+                console.log({element});
+                let divMascotas = " <div id=\""+element.nombre+"\" class=\"row row align-items-center\">\n" +
+                    "            <div class=\"col-6\">\n" +
+                    "                <div class=\""+element.nombre+"\">\n" +
+                    "                    <img class=\"perro\" id=\""+element.id+"\" src=\https://loremflickr.com/400/200/dog"+element.id+"\" alt=\"Cachorro "+element.nombre+"\">\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"col-6\">\n" +
+                    "                <div class=\""+element.nombre+"\">\n" +
+                    "                    <a href=\"#openModal"+element.id+"\">"+element.nombre+"</a>\n" +
+                    "                    <br>\n" +
+                    "                    <br>\n" +
+                    "                    <a id=\"adoptar"+element.id+"\" href=\"#modalFormUno\" onclick=\"almacenar('"+element.nombre+"')\" rel=\"noopener noreferrer\">Adoptame</a>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        </div>"
+                let modalMascotas = " <div id=\"openModal"+element.id+"\" class=\"modalDialog\">   <div>\n" +
+                    "        <a href=\"#close\" title=\"Close\" class=\"close\">X</a>\n" +
+                    "        <h2>"+element.nombre+"</h2>\n" +
+                    "        <p>Edad: "+element.edad+" años</p>\n" +
+                    "        <p>Genero: "+element.genero+"</p>\n" +
+                    "        <p>Esterilizado: "+element.esteril+"</p>\n" +
+                    "        <p>N° Chip: "+element.nroChip+"</p>\n" +
+                    "    </div>" +
+                    "</div>"
+
+                if (element.tipo == 'Perro') {
+                    $("#contenedor_perros").append(divMascotas);
+                    $("#modal").append(modalMascotas);
+                }
             })
         })
-
     })
 </script>
 </body>
