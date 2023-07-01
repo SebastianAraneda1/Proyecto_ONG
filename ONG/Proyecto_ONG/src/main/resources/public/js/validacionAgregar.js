@@ -54,6 +54,7 @@ function validar() {
     }
 
     if (formularioCorrecto == true) {
+        redireccionar()
         return true;
     }
     else{
@@ -62,5 +63,10 @@ function validar() {
 }
 
 function redireccionar(){
-    window.location.href = 'perros.html'
+    var tipos = $("#tipo").val()
+    if (tipos == 'Perro') {
+        window.location.href = 'perros.html'
+    }else{
+        window.location.href = 'gatos.html'
+    }
 }
