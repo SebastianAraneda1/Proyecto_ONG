@@ -124,6 +124,37 @@
     })
     $("#form").on("submit", function (event) {
         event.preventDefault();
+        if ( !validar() ) {
+            return;
+        }
+
+        let settings = {}
+        settings.headers = {
+            "Accept":"application/json",
+            "Content-Type": "application/json"
+        }
+        $.ajaxSetup(settings);
+
+        const id = sessionStorage.getItem("perro");
+
+        $.ajax({
+            url: `/mascotas/${id}`,
+            type: 'DELETE',
+            success: function(result) {
+                if ( result.status === "200") {
+                    const element = document.getElementById(id);
+                    element.style.display = "none";
+                    alert(" La mascota ha sido adoptada =) ");
+                }
+                else{
+                    alert("Error interno, vuelva a intentarlo más tarde");
+                }
+            },
+            error: function(request,msg,error) {
+                alert("Error interno, vuelva a intentarlo más tarde");
+            }
+        });
+
         var formularioCorrecto = validar();
         if (!formularioCorrecto) {
             event.preventDefault(); // Evitar que el formulario se envíe si la validación falla
@@ -151,7 +182,7 @@
                     "                    <a href=\"#openModal"+element.id+"\">"+element.nombre+"</a>\n" +
                     "                    <br>\n" +
                     "                    <br>\n" +
-                    "                    <a id=\"adoptar"+element.id+"\" href=\"#modalFormUno\" onclick=\"almacenar('"+element.nombre+"')\" rel=\"noopener noreferrer\">Adoptame</a>\n" +
+                    "                    <a id=\"adoptar"+element.id+"\" href=\"#modalFormUno\" onclick=\"almacenar('"+element.id+"')\" rel=\"noopener noreferrer\">Adoptame</a>\n" +
                     "                </div>\n" +
                     "            </div>\n" +
                     "        </div>"
