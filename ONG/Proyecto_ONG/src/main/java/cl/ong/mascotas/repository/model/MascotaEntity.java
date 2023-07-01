@@ -15,7 +15,7 @@ public class MascotaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false)
-    private int nroChip;
+    private int nro_Chip;
     @Column(nullable = false)
     private int edad;
     @Column(nullable = false, length = 10)

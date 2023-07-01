@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <link rel="stylesheet" href="css/agregarAnimal.css">
+    <meta charset="UTF-8">
+    <title>Añadir Perro</title>
+</head>
+<body>
+    <div class="formulario">
+        <form id="form">
+            <h2 class="titulo">Agregar Cachorro</h2>
+
+            <span class="msgError" id="chipError">Chip debe ser de 4 digitos</span>
+            <label for="nroChip">Nro Chip:</label>
+            <input class="cajas" id="nroChip" type="number"><br>
+
+            <span class="msgError" id="edadError">Edad Invalida</span>
+            <label for="edad">Edad:</label>
+            <input class="cajas" id="edad" type="number"><br>
+
+            <span class="msgError" id="nombreError">Nombre Invalido</span>
+            <label for="nombre">Nombre cachorro:</label>
+            <input class="cajas" id="nombre" type="text"><br>
+
+
+            <span class="msgError" id="generoError">Indique Hembra o Macho</span>
+            <label for="genero">Genero animal:</label>
+            <input class="cajas" id="genero" type="text"><br>
+
+            <span class="msgError" id="esterilError">Indique Si o No</span>
+            <label for="esteril">¿Esteril? (si/no):</label>
+            <input class="cajas" id="esteril" type="text"><br>
+
+            <span class="msgError" id="tipoError">Indique Perro o Gato</span>
+            <label for="tipo">Tipo animal</label>
+            <input class="cajas" id="tipo" type="text"><br>
+
+            <br>
+            <a id="save" ><input id="guardar" type="button" class="boton" value="Guardar"></a>
+            <a id="exit" href="perros.html"><input type="button" class="boton" value="Salir"></a>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let settings = {}
+            settings.headers = {
+                "Accept":"application/json",
+                "Content-Type": "application/json"
+            }
+            $.ajaxSetup(settings)
+
+            $("#save").click(function(){
+                if ( !validar() ) {
+                    return;
+                }else {
+                    let formData = {}
+                    formData.nroChip = parseInt($("#nroChip").val());
+                    formData.edad = parseInt($("#edad").val());
+                    formData.nombre = $("#nombre").val()
+                    formData.genero = $("#genero").val()
+                    formData.esteril = $("#esteril").val()
+                    formData.tipo = $("#tipo").val()
+
+                    let data = JSON.stringify(formData)
+                    debugger;
+                    $.post("/mascotas", data, function (json, status, jqxhr) {
+                        alert(status)
+                        console.log({status});
+                    }, "json")
+                    redireccionar()
+                }
+            })
+            $(".msgError").hide()
+        })
+    </script>
+    <script type="text/javascript" src="js/validacionAgregar.js"></script>
+</body>
+</html>
