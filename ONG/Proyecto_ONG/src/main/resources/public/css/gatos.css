@@ -28,9 +28,10 @@ body {
 a {
     color: rgb(250, 255, 174) !important;
     font-size: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#gato {
+.gato {
     width: 20vw;
     margin: 3vw 3vw 2vw 2vw;
     border-radius: 20px;
