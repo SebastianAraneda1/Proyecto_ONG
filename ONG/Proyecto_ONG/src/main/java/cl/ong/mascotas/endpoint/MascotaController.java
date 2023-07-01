@@ -1,9 +1,9 @@
 package cl.ong.mascotas.endpoint;
 
 import cl.ong.mascotas.endpoint.model.Mascota;
+import cl.ong.mascotas.repository.model.CommonResponse;
 import cl.ong.mascotas.service.MascotaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,25 +33,14 @@ public class MascotaController {
     }
 
     @DeleteMapping("/mascotas/{id}")
-    public ResponseEntity<GetMascotaResponse> delete(@PathVariable int id){
-        Mascota deletedMascota = mascotaService.deleteMascotaById(id);
-        if(deletedMascota != null){
-            GetMascotaResponse response = new GetMascotaResponse();
-            response.setMascota(deletedMascota);
-            return ResponseEntity.ok(response);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public CommonResponse delete(@PathVariable int id){
+        return mascotaService.deleteMascotaById(id);
     }
 
     @PostMapping("/mascotas")
-    public ResponseEntity<GetMascotaResponse> post(@RequestBody Mascota aMascota){
-        boolean added = mascotaService.addMascota(aMascota);
-        if(added){
-            return ResponseEntity.status(HttpStatus.CREATED).build();
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
+    public CommonResponse post(@RequestBody Mascota aMascota){
+        return mascotaService.addMascota(aMascota);
+
     }
 
     @PutMapping("/mascotas/{id}")
