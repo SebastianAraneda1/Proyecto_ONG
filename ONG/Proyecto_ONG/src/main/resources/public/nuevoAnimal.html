@@ -3,12 +3,12 @@
 <head>
     <link rel="stylesheet" href="css/agregarAnimal.css">
     <meta charset="UTF-8">
-    <title>Añadir Perro</title>
+    <title>Añadir Mascota</title>
 </head>
 <body>
     <div class="formulario">
         <form id="form">
-            <h2 class="titulo">Agregar Cachorro</h2>
+            <h2 class="titulo">Agregar Masvota</h2>
 
             <span class="msgError" id="chipError">Chip debe ser de 4 digitos</span>
             <label for="nroChip">Nro Chip:</label>
@@ -19,25 +19,25 @@
             <input class="cajas" id="edad" type="number"><br>
 
             <span class="msgError" id="nombreError">Nombre Invalido</span>
-            <label for="nombre">Nombre cachorro:</label>
-            <input class="cajas" id="nombre" type="text"><br>
+            <label for="nombre">Nombre Mascota:</label>
+            <input class="cajas" id="nombre" type="text" maxlength="10"><br>
 
 
             <span class="msgError" id="generoError">Indique Hembra o Macho</span>
             <label for="genero">Genero animal:</label>
-            <input class="cajas" id="genero" type="text" placeholder="Macho/Hembra"><br>
+            <input class="cajas" id="genero" type="text" placeholder="Macho/Hembra" maxlength="6"><br>
 
             <span class="msgError" id="esterilError">Indique Si o No</span>
             <label for="esteril">¿Esteril? (si/no):</label>
-            <input class="cajas" id="esteril" type="text" placeholder="Si o No"><br>
+            <input class="cajas" id="esteril" type="text" placeholder="Si o No" maxlength="2"><br>
 
             <span class="msgError" id="tipoError">Indique Perro o Gato</span>
             <label for="tipo">Tipo animal</label>
-            <input class="cajas" id="tipo" type="text" placeholder="Gato/Perro"><br>
+            <input class="cajas" id="tipo" type="text" placeholder="Gato/Perro" maxlength="5"><br>
 
             <br>
             <a id="save" ><input id="guardar" type="button" class="boton" value="Guardar"></a>
-            <a id="exit" href="perros.html"><input type="button" class="boton" value="Salir"></a>
+            <a id="exit" href="menu.html"><input type="button" class="boton" value="Salir"></a>
         </form>
     </div>
 
