@@ -21,6 +21,8 @@ public class MascotaService {
         for (MascotaEntity entity: mascotas){
             Mascota mascota = new Mascota();
             mascota.setId(entity.getId());
+            mascota.setNro_Chip(entity.getNro_Chip());
+            mascota.setEdad(entity.getEdad());
             mascota.setNombre(entity.getNombre());
             mascota.setGenero(entity.getGenero());
             mascota.setEsteril(entity.getEsteril());
@@ -37,6 +39,8 @@ public class MascotaService {
             MascotaEntity dbMascota = foundMascota.get();
             Mascota mascota = new Mascota();
             mascota.setId(dbMascota.getId());
+            mascota.setNro_Chip(dbMascota.getNro_Chip());
+            mascota.setEdad(dbMascota.getEdad());
             mascota.setNombre(dbMascota.getNombre());
             mascota.setGenero(dbMascota.getGenero());
             mascota.setEsteril(dbMascota.getEsteril());
@@ -59,6 +63,14 @@ public class MascotaService {
                 return response;
             }
             MascotaEntity dbMascota = foundMascota.get();
+            Mascota mascota = new Mascota();
+            mascota.setId(dbMascota.getId());
+            mascota.setNro_Chip(dbMascota.getNro_Chip());
+            mascota.setEdad(dbMascota.getEdad());
+            mascota.setNombre(dbMascota.getNombre());
+            mascota.setGenero(dbMascota.getGenero());
+            mascota.setEsteril(dbMascota.getEsteril());
+            mascota.setTipo(dbMascota.getTipo());
             mascotaRepository.delete(dbMascota);
             response.setStatus("200");
             response.setMessage("OK");
@@ -92,6 +104,7 @@ public class MascotaService {
             response.setStatus("500");
         }
         return response;
+
     }
 
     public Mascota updateMascotaById(int id, Mascota aMascota) {
@@ -99,6 +112,8 @@ public class MascotaService {
         boolean isFound = foundMascota.isPresent();
         if(isFound){
             MascotaEntity mascota = foundMascota.get();
+            mascota.setNro_Chip(aMascota.getNro_Chip());
+            mascota.setEdad(aMascota.getEdad());
             mascota.setNombre(aMascota.getNombre());
             mascota.setGenero(aMascota.getGenero());
             mascota.setEsteril(aMascota.getEsteril());

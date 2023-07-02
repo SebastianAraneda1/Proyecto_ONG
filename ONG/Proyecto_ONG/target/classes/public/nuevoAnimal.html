@@ -12,7 +12,7 @@
 
             <span class="msgError" id="chipError">Chip debe ser de 4 digitos</span>
             <label for="nroChip">Nro Chip:</label>
-            <input class="cajas" id="nroChip" type="number"><br>
+            <input class="cajas" id="nroChip" type="number" placeholder="4 digitos"><br>
 
             <span class="msgError" id="edadError">Edad Invalida</span>
             <label for="edad">Edad:</label>
@@ -25,15 +25,15 @@
 
             <span class="msgError" id="generoError">Indique Hembra o Macho</span>
             <label for="genero">Genero animal:</label>
-            <input class="cajas" id="genero" type="text"><br>
+            <input class="cajas" id="genero" type="text" placeholder="Macho/Hembra"><br>
 
             <span class="msgError" id="esterilError">Indique Si o No</span>
             <label for="esteril">¿Esteril? (si/no):</label>
-            <input class="cajas" id="esteril" type="text"><br>
+            <input class="cajas" id="esteril" type="text" placeholder="Si o No"><br>
 
             <span class="msgError" id="tipoError">Indique Perro o Gato</span>
             <label for="tipo">Tipo animal</label>
-            <input class="cajas" id="tipo" type="text"><br>
+            <input class="cajas" id="tipo" type="text" placeholder="Gato/Perro"><br>
 
             <br>
             <a id="save" ><input id="guardar" type="button" class="boton" value="Guardar"></a>
@@ -44,6 +44,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
+
         $(document).ready(function(){
             $(".msgError").hide()
             let settings = {}
@@ -52,6 +53,24 @@
                 "Content-Type": "application/json"
             }
             $.ajaxSetup(settings)
+
+            $("#nroChip").keyup( () => {
+                const e = window.event;
+                const val = document.getElementById(e.target.id).value;
+                if ( val && val.toString().length > 4 ) {
+                    $(`#${e.target.id}`).val(val.substring(0, 4));
+                    e.preventDefault();
+                }
+            });
+
+            $("#edad").keyup( () => {
+                const e = window.event;
+                const val = document.getElementById(e.target.id).value;
+                if ( val && val.toString().length > 2 ) {
+                    $(`#${e.target.id}`).val(val.substring(0, 2));
+                    e.preventDefault();
+                }
+            });
 
             $("#save").click(function(){
                 if ( !validar() ) {

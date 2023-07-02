@@ -41,11 +41,15 @@
         </div>
     </nav>
 </div>
+<<<<<<< HEAD
+<h1 class="titulo"><b>Perros en adopci&oacute;;n</b></h1>
+=======
 
 
 <h1 class="titulo"><b>Perros en adopción</b></h1>
+>>>>>>> 018f052d1ebf14fca688fbfd716fa1db1fe0b0bc
 
-<p class="parrafo">Adopta a nuestros perritos disponibles aqui abajo, cada uno te mostrara sus datos si pinchas su
+<p class="parrafo">Adopta a nuestros perritos disponibles aqu&iacute; abajo, cada uno te mostrara sus datos si pinchas su
     nombre. Si deseas adoptarlo solo debes dar click en "Adoptar"</p>
 
 <h2 class="titulo">Nuestros perros que buscan familia:</h2>
@@ -194,10 +198,11 @@
                 let modalMascotas = " <div id=\"openModal"+element.id+"\" class=\"modalDialog\">   <div>\n" +
                     "        <a href=\"#close\" title=\"Close\" class=\"close\">X</a>\n" +
                     "        <h2>"+element.nombre+"</h2>\n" +
-                    "        <p>Edad: "+element.edad+" años</p>\n" +
+                    "        <p>Edad: "+element.edad+" a&ntilde;os</p>\n" +
                     "        <p>Genero: "+element.genero+"</p>\n" +
                     "        <p>Esterilizado: "+element.esteril+"</p>\n" +
                     "        <p>N° Chip: "+element.nro_Chip+"</p>\n" +
+                    "        <a style='cursor: pointer !important; text-decoration: underline !important;' onclick='almacenar("+element.id+")' href='Update_mascota.html'>Editar</a>\n" +
                     "    </div>" +
                     "</div>"
 
