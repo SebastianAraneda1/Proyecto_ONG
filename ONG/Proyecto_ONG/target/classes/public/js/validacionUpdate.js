@@ -66,7 +66,8 @@ function redireccionar(){
     var tipos = $("#tipo").val().toLowerCase();
     if (tipos == 'perro') {
         window.location.href = 'perros.html'
-    }else{
+    }
+    if(tipos == 'gato'){
         window.location.href = 'gatos.html'
     }
 }

@@ -31,13 +31,13 @@ a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#gato {
-    width: 20vw !important;
-    margin: 3vw 3vw 2vw 2vw !important;
-    border-radius: 20px !important;
-    border: 1vw !important;
-    border-color: grey !important;
-    border-style: groove !important;
+.gato {
+    width: 20vw;
+    margin: 3vw 3vw 2vw 2vw;
+    border-radius: 20px;
+    border: 1vw;
+    border-color: grey;
+    border-style: groove;
 }
 
 /*Modal*/
@@ -103,7 +103,7 @@ a {
 }
 
 #texto {
-    color: #000 !important;
+    color: #000;
 }
 
 .cajas:hover, .cajas:focus {

@@ -25,7 +25,7 @@
             <div id="MenuNavegacion" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item"><a class="nav-link" href="menu.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="perros.html">Adoptar un perro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perros.html">Adoptar un Perro</a></li>
                     <li class="nav-item"><a class="nav-link" href="Accesorios.html">Tienda</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
@@ -41,15 +41,16 @@
         </div>
     </nav>
 </div>
+
 <h1 class="titulo"><b>Gatos en adopci&oacute;n</b></h1>
 
-<p class="parrafo">Adopta a nuestros gatitos disponibles aqu&iacute; abajo, cada uno te mostrar&aacute; sus datos si pinchas su
+<p class="parrafo">Adopta a nuestros gatitos disponibles aqu&iacute; abajo, cada uno te mostrara sus datos si pinchas su
     nombre. Si deseas adoptarlo solo debes dar click en "Adoptar"</p>
 
-<h2 class="titulo">Nuestros gatos que buscan familia:</h2>
+<h2 class="titulo">Nuestros Gatos que buscan familia:</h2>
 
 <div class="gatitos">
-    <div id="contenedor_gatitos" class="container-lg">
+    <div id="contenedor_gatos" class="container-lg">
 
     </div>
 </div>
@@ -108,6 +109,7 @@
             </div>
         </form>
     </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -176,7 +178,7 @@
                 let divMascotas = " <div id=\""+element.nombre+"\" class=\"row row align-items-center\">\n" +
                     "            <div class=\"col-6\">\n" +
                     "                <div class=\""+element.nombre+"\">\n" +
-                    "                    <img id=\"gato\" id=\""+element.id+"\" src=\https://loremflickr.com/400/200/kitten"+element.id+"\" alt=\"Minino "+element.nombre+"\">\n" +
+                    "                    <img class=\"gato\" id=\""+element.id+"\" src=\https://loremflickr.com/400/200/kitten\" alt=\"Minino "+element.nombre+"\">\n" +
                     "                </div>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-6\">\n" +
@@ -184,7 +186,7 @@
                     "                    <a href=\"#openModal"+element.id+"\">"+element.nombre+"</a>\n" +
                     "                    <br>\n" +
                     "                    <br>\n" +
-                    "                    <a id=\"adoptar"+element.id+"\" href=\"#modalFormUno\" onclick=\"almacenar('"+element.nombre+"')\" rel=\"noopener noreferrer\">Adoptame</a>\n" +
+                    "                    <a id=\"adoptar"+element.id+"\" href=\"#modalFormUno\" onclick=\"almacenar('"+element.id+"')\" rel=\"noopener noreferrer\">Adoptame</a>\n" +
                     "                </div>\n" +
                     "            </div>\n" +
                     "        </div>"
@@ -194,13 +196,13 @@
                     "        <p>Edad: "+element.edad+" a&ntilde;os</p>\n" +
                     "        <p>Genero: "+element.genero+"</p>\n" +
                     "        <p>Esterilizado: "+element.esteril+"</p>\n" +
-                    "        <p>N° Chip: "+element.nro_Chip+"</p>\"n" +
-                    "        <a style='cursor: pointer !important; text-decoration: underline !important;' onclick='almacenar("+element.id+")' href='Update_mascota.html'>Editar</a>\n" +
+                    "        <p>N° Chip: "+element.nro_Chip+"</p>\n" +
+                    "        <a style='cursor: pointer !important; text-decoration: underline !important;' onclick='almacenar("+element.id+")' href='Update_gato.html'>Editar</a>\n" +
                     "    </div>" +
                     "</div>"
 
                 if (element.tipo.toLowerCase() == 'gato') {
-                    $("#contenedor_gatitos").append(divMascotas);
+                    $("#contenedor_gatos").append(divMascotas);
                     $("#modal").append(modalMascotas);
                 }
             })
