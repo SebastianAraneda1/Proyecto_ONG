@@ -29,24 +29,24 @@ function validar() {
         $("#nombreError").hide()
     }
 
-    var generos = $("#genero").val()
-    if (generos != 'Hembra' && generos != 'Macho') {
+    var generos = $("#genero").val().toLowerCase();
+    if (generos != 'hembra' && generos != 'macho') {
         $("#generoError").show()
         formularioCorrecto = false;
     } else {
         $("#generoError").hide()
     }
 
-    var esterils = $("#esteril").val()
-    if(esterils != 'Si' && esterils != 'No'){
+    var esterils = $("#esteril").val().toLowerCase();
+    if(esterils != 'si' && esterils != 'no'){
         $("#esterilError").show()
         formularioCorrecto = false;
     }else{
         $("#esterilError").hide()
     }
 
-    var tipos = $("#tipo").val()
-    if (tipos != 'Perro' && tipos != 'Gato'){
+    var tipos = $("#tipo").val().toLowerCase();
+    if (tipos != 'perro' && tipos != 'gato'){
         $("#tipoError").show()
         formularioCorrecto = false;
     }else{
@@ -63,8 +63,8 @@ function validar() {
 }
 
 function redireccionar(){
-    var tipos = $("#tipo").val()
-    if (tipos == 'Perro') {
+    var tipos = $("#tipo").val().toLowerCase();
+    if (tipos == 'perro') {
         window.location.href = 'perros.html'
     }else{
         window.location.href = 'gatos.html'

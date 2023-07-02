@@ -19,7 +19,7 @@
         <input class="cajas" id="edad" type="number"><br>
 
         <span class="msgError" id="nombreError">Nombre Invalido</span>
-        <label for="nombre">Nombre cachorro:</label>
+        <label for="nombre">Nombre Mascota:</label>
         <input class="cajas" id="nombre" type="text" maxlength="10"><br>
 
 
@@ -37,7 +37,7 @@
 
         <br>
         <a id="save" ><input id="guardar" type="button" class="boton" value="Actualizar"></a>
-        <a id="exit" href="perros.html"><input type="button" class="boton" value="Salir"></a>
+        <a id="exit" href="menu.html"><input type="button" class="boton" value="Salir"></a>
     </form>
 </div>
 
@@ -66,7 +66,7 @@
             }
         });
 
-        const id = sessionStorage.getItem("perro")
+        const id = sessionStorage.getItem("perro", "gato")
         $("#msgError").hide();
         let url = "/mascotas/" + id
         $.get(url, function(json){

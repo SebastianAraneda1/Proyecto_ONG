@@ -137,7 +137,7 @@
         }
         $.ajaxSetup(settings);
 
-        const id = sessionStorage.getItem("perro");
+        const id = sessionStorage.getItem("gato");
 
         $.ajax({
             url: `/mascotas/${id}`,
@@ -191,10 +191,11 @@
                 let modalMascotas = " <div id=\"openModal"+element.id+"\" class=\"modalDialog\">   <div>\n" +
                     "        <a href=\"#close\" title=\"Close\" class=\"close\">X</a>\n" +
                     "        <h2>"+element.nombre+"</h2>\n" +
-                    "        <p>Edad: "+element.edad+" años</p>\n" +
+                    "        <p>Edad: "+element.edad+" a&ntilde;os</p>\n" +
                     "        <p>Genero: "+element.genero+"</p>\n" +
                     "        <p>Esterilizado: "+element.esteril+"</p>\n" +
-                    "        <p>N° Chip: "+element.nro_Chip+"</p>\n" +
+                    "        <p>N° Chip: "+element.nro_Chip+"</p>\"n" +
+                    "        <a style='cursor: pointer !important; text-decoration: underline !important;' onclick='almacenar("+element.id+")' href='Update_mascota.html'>Editar</a>\n" +
                     "    </div>" +
                     "</div>"
 
