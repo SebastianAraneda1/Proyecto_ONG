@@ -12,7 +12,7 @@
 
         <span class="msgError" id="chipError">Chip debe ser de 4 digitos</span>
         <label for="nroChip">Nro Chip:</label>
-        <input class="cajas" id="nroChip" type="number" onkeydown="maxLength(4)"><br>
+        <input class="cajas" id="nroChip" type="number"><br>
 
         <span class="msgError" id="edadError">Edad Invalida</span>
         <label for="edad">Edad:</label>
@@ -20,20 +20,20 @@
 
         <span class="msgError" id="nombreError">Nombre Invalido</span>
         <label for="nombre">Nombre cachorro:</label>
-        <input class="cajas" id="nombre" type="text"><br>
+        <input class="cajas" id="nombre" type="text" maxlength="10"><br>
 
 
         <span class="msgError" id="generoError">Indique Hembra o Macho</span>
         <label for="genero">Genero animal:</label>
-        <input class="cajas" id="genero" type="text"><br>
+        <input class="cajas" id="genero" type="text" maxlength="6"><br>
 
         <span class="msgError" id="esterilError">Indique Si o No</span>
         <label for="esteril">¿Esteril? (si/no):</label>
-        <input class="cajas" id="esteril" type="text"><br>
+        <input class="cajas" id="esteril" type="text" maxlength="2"><br>
 
         <span class="msgError" id="tipoError">Indique Perro o Gato</span>
         <label for="tipo">Tipo animal</label>
-        <input class="cajas" id="tipo" type="text"><br>
+        <input class="cajas" id="tipo" type="text" maxlength="5"><br>
 
         <br>
         <a id="save" ><input id="guardar" type="button" class="boton" value="Actualizar"></a>
@@ -47,6 +47,7 @@
 <script>
 
     $(document).ready(function(){
+        $(".msgError").hide();
         $("#nroChip").keyup( () => {
             const e = window.event;
             const val = document.getElementById(e.target.id).value;
@@ -85,13 +86,16 @@
         $.ajaxSetup(settings)
 
         $("#save").click(function(){
+            if ( !validar() ) {
+                return;
+            }
             let formData = {}
             formData.nro_Chip = $("#nroChip").val()
             formData.edad = $("#edad").val()
             formData.nombre = $("#nombre").val()
-            formData.genero = $("#genero").val()
-            formData.esteril = $("#esteril").val()
-            formData.tipo = $("#tipo").val()
+            formData.genero = $("#genero").val().toLowerCase();
+            formData.esteril = $("#esteril").val().toLowerCase();
+            formData.tipo = $("#tipo").val().toLowerCase();
 
             let data = JSON.stringify(formData)
 
@@ -101,7 +105,12 @@
             putSettings.data = data
             putSettings.dataType = "json"
             putSettings.success = function(json, status, jqxhr){
-                alert(status)
+                if ( status === "success") {
+                    alert("Mascota actualizada");
+                    redireccionar();
+                }else{
+                    alert("Ha ocurrido un error, intentelo nuevamente");
+                }
             }
 
             $.ajax(putSettings)

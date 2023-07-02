@@ -41,13 +41,8 @@
         </div>
     </nav>
 </div>
-<<<<<<< HEAD
-<h1 class="titulo"><b>Perros en adopci&oacute;;n</b></h1>
-=======
 
-
-<h1 class="titulo"><b>Perros en adopción</b></h1>
->>>>>>> 018f052d1ebf14fca688fbfd716fa1db1fe0b0bc
+<h1 class="titulo"><b>Perros en adopci&oacute;n</b></h1>
 
 <p class="parrafo">Adopta a nuestros perritos disponibles aqu&iacute; abajo, cada uno te mostrara sus datos si pinchas su
     nombre. Si deseas adoptarlo solo debes dar click en "Adoptar"</p>
@@ -206,7 +201,7 @@
                     "    </div>" +
                     "</div>"
 
-                if (element.tipo == 'Perro') {
+                if (element.tipo.toLowerCase() == 'perro') {
                     $("#contenedor_perros").append(divMascotas);
                     $("#modal").append(modalMascotas);
                 }
