@@ -2,6 +2,7 @@ package cl.ong.mascotas.service;
 
 import cl.ong.mascotas.endpoint.model.Mascota;
 import cl.ong.mascotas.repository.MascotaRepository;
+import cl.ong.mascotas.repository.model.CommonResponse;
 import cl.ong.mascotas.repository.model.MascotaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,10 +52,16 @@ public class MascotaService {
         }
     }
 
-    public Mascota deleteMascotaById(int id) {
-        Optional<MascotaEntity> foundMascota = mascotaRepository.findById(id);
-        boolean isFound = foundMascota.isPresent();
-        if(isFound){
+    public CommonResponse deleteMascotaById(int id) {
+        CommonResponse response = new CommonResponse();
+        try {
+            Optional<MascotaEntity> foundMascota = mascotaRepository.findById(id);
+            boolean isFound = foundMascota.isPresent();
+            if ( !isFound ){
+                response.setStatus("401");
+                response.setMessage("Not Found");
+                return response;
+            }
             MascotaEntity dbMascota = foundMascota.get();
             Mascota mascota = new Mascota();
             mascota.setId(dbMascota.getId());
@@ -65,21 +72,39 @@ public class MascotaService {
             mascota.setEsteril(dbMascota.getEsteril());
             mascota.setTipo(dbMascota.getTipo());
             mascotaRepository.delete(dbMascota);
-            return mascota;
+            response.setStatus("200");
+            response.setMessage("OK");
+            return response;
+
         }
-        return null;
+        catch (Exception e){
+            response.setStatus("500");
+            response.setMessage(e.getMessage());
+            return response;
+        }
+
     }
 
-    public boolean addMascota(Mascota aMascota) {
-        MascotaEntity newMascota = new MascotaEntity();
-        newMascota.setNro_Chip(aMascota.getNro_Chip());
-        newMascota.setEdad(aMascota.getEdad());
-        newMascota.setNombre(aMascota.getNombre());
-        newMascota.setGenero(aMascota.getGenero());
-        newMascota.setEsteril(aMascota.getEsteril());
-        newMascota.setTipo(aMascota.getTipo());
-        mascotaRepository.save(newMascota);
-        return true;
+    public CommonResponse addMascota(Mascota aMascota) {
+        CommonResponse response = new CommonResponse();
+        try {
+            MascotaEntity newMascota = new MascotaEntity();
+            newMascota.setNro_Chip(aMascota.getNro_Chip());
+            newMascota.setEdad(aMascota.getEdad());
+            newMascota.setNombre(aMascota.getNombre());
+            newMascota.setGenero(aMascota.getGenero());
+            newMascota.setEsteril(aMascota.getEsteril());
+            newMascota.setTipo(aMascota.getTipo());
+            mascotaRepository.save(newMascota);
+            response.setMessage("OK");
+            response.setStatus("200");
+
+        }catch ( Exception e ){
+            response.setMessage("NoOK");
+            response.setStatus("500");
+        }
+        return response;
+
     }
 
     public Mascota updateMascotaById(int id, Mascota aMascota) {

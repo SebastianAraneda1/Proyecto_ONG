@@ -46,6 +46,7 @@
     <script>
 
         $(document).ready(function(){
+            $(".msgError").hide()
             let settings = {}
             settings.headers = {
                 "Accept":"application/json",
@@ -76,22 +77,24 @@
                     return;
                 }else {
                     let formData = {}
-                    formData.nroChip = parseInt($("#nroChip").val());
+                    formData.nro_Chip = parseInt($("#nroChip").val());
                     formData.edad = parseInt($("#edad").val());
                     formData.nombre = $("#nombre").val()
                     formData.genero = $("#genero").val()
                     formData.esteril = $("#esteril").val()
                     formData.tipo = $("#tipo").val()
-
                     let data = JSON.stringify(formData)
-                    debugger;
                     $.post("/mascotas", data, function (json, status, jqxhr) {
-                        alert(status)
-                        console.log({status});
+                        if ( json.status === "200") {
+                            alert(formData.nombre + " ha sido agregado correctamente");
+                            redireccionar();
+                        }
+                        else {
+                            alert("Error interno, vuelva a intentarlo más tarde");
+                        }
                     }, "json")
                 }
             })
-            $(".msgError").hide()
         })
     </script>
     <script type="text/javascript" src="js/validacionAgregar.js"></script>

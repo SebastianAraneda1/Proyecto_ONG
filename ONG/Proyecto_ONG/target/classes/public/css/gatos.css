@@ -31,13 +31,13 @@ a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.gato {
-    width: 20vw;
-    margin: 3vw 3vw 2vw 2vw;
-    border-radius: 20px;
-    border: 1vw;
-    border-color: grey;
-    border-style: groove;
+#gato {
+    width: 20vw !important;
+    margin: 3vw 3vw 2vw 2vw !important;
+    border-radius: 20px !important;
+    border: 1vw !important;
+    border-color: grey !important;
+    border-style: groove !important;
 }
 
 /*Modal*/
@@ -126,23 +126,6 @@ a {
 .boton:hover {
     background: #133043;
 }
-
-/*#form {
-	padding-top: 10vh;
-	padding-bottom: 10vh;
-	color: #1b262c;
-	margin: 0;
-}*/
-
-/*.formulario {
-	width: 35vh;
-	padding: 10vh;
-	margin: auto;
-	margin-top: 10vh;
-	background: #557569;
-	border-radius: 5vh;
-	border-style: groove;
-}*/
 
 label {
     color: rgb(0, 0, 0);
