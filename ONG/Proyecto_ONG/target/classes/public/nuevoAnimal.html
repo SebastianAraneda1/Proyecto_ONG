@@ -64,7 +64,6 @@
                     formData.genero = $("#genero").val()
                     formData.esteril = $("#esteril").val()
                     formData.tipo = $("#tipo").val()
-                     console.log(formData.nro_Chip);
                     let data = JSON.stringify(formData)
                     $.post("/mascotas", data, function (json, status, jqxhr) {
                         if ( json.status === "200") {

@@ -46,10 +46,11 @@ function validar() {
         return true;
     } else {
         $("#emailError").show()
+        return false
     }
-    if (formularioCorrecto == true) {
+    /*if (formularioCorrecto == true) {
         adoptar();
-    }
+    }*/
 
 }
 
@@ -57,7 +58,7 @@ function adoptar() {
     const id = sessionStorage.getItem("gato");
     const element = document.getElementById(id);
     element.style.display = "none";
-    alert("Adoptaste a un minino");
+    //alert("Adoptaste a un minino");
     // console.log(5 == '5');
     // console.log(5 === '5');
 }
