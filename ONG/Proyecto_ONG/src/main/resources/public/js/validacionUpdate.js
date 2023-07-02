@@ -70,12 +70,3 @@ function redireccionar(){
         window.location.href = 'gatos.html'
     }
 }
-
-function maxLength(max){
-    const e = window.event;
-    debugger;
-    const val = document.getElementById(e.id);
-    if ( val && val.toString().length > max ) {
-        e.preventDefault();
-    }
-}
